@@ -58,6 +58,8 @@ function deleteWithSplice(name) {
         return false;
     }
     contacts.splice(index, 1);
+    fs.writeFileSync(dataPath, JSON.stringify(contacts));
+    console.log(`Contact ${name} berhasil dihapus!`);
 }
 
 function saveContact(name, email, phone) {
